@@ -1,0 +1,29 @@
+h1 {
+    background-color:#696969;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    height: 60px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+#content {
+    margin-top: 20px;
+}
+
+#searchCity {
+    font-family: arial;
+    font-size: 25px;
+}
+
+
+#searchbar {
+   
+
+}
+
+#articleArea {
+   
+}
+
