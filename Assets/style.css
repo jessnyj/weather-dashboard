@@ -1,5 +1,5 @@
 h1 {
-    background-color:#696969;
+    background-color:#383838;
     text-align: center;
     color: white;
     font-family: sans-serif;
@@ -17,13 +17,15 @@ h1 {
     font-size: 25px;
 }
 
-
-#searchbar {
-   
-
+#cityName {
+    text-align: center;
 }
 
-#articleArea {
-   
+#fiveday {
+    color: white;
+}
+
+h2 {
+    float: left;
 }
 
