@@ -13,7 +13,7 @@ $(document).ready(function () {
             var tempNew = Math.round(((response.main.temp) - 273.15) * 9 / 5 + 32)
 
             // Transfer content to HTML
-            $("#cityName").html("<h1>" + response.name + " " + moment().subtract(10, 'days').calendar() + " " + "<i class='fa fa-cloud' style='font-size:35px;color:red'></i></h1>");
+            $("#cityName").html("<h1>" + response.name + " " + moment().subtract(10, 'days').calendar() + " " + "<i class='fa fa-cloud' style='font-size:35px;color:blue'></i></h1>");
             var windSpeed = response.wind.speed;
             $("#temp").text("Temperature (F) " + tempNew);
             $("#humidity").text("Humidity: " + response.main.humidity);
@@ -60,7 +60,7 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
             // for loop to display each day
-            
+
         });
     }
 
