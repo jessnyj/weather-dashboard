@@ -1,7 +1,7 @@
 var APIKey = "b2803d08257a2919cdac41bd8ceb3835"
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+var citySearch;
 
-var city = $("citySearch").val();
 
 function displayWeather() {
     $.ajax({
@@ -45,22 +45,6 @@ function uvindex(longitude, latidute) {
 
 }
 
-function renderButtons () {
-
-}
-
-// Search button
-$("#searchBtn").on("click", function (event) {
-    event.preventDefault();
-    var search = $("#searchinput").val().trim();
-    search.push(city);
-    renderButtons();
-
-});
-
-$(document).on("click", "#searchBtn", displayWeather);
-renderButtons();
-
 
 // 5day forecast
 var APIKey2 = "f0dce85278aa72524554b8d53e297782"
@@ -74,3 +58,32 @@ function forecast() {
         console.log(queryURL);
         console.log(response); 
 });
+
+
+
+// Event Listener
+// Search Button
+$(document.body).on("click", "searchBtn", function(event) {
+    event.preventDefault();
+    citySearch = $("#cityInput").val();
+    displayWeather().then(uvindex).then(forecast);
+    $("#cityInput").val("");
+});
+
+
+
+// function renderButtons () {
+
+// }
+
+// Search button
+// $("#searchBtn").on("click", function (event) {
+//     event.preventDefault();
+//     var search = $("#searchinput").val().trim();
+//     search.push(city);
+//     renderButtons();
+
+// });
+
+// $(document).on("click", "#searchBtn", displayWeather);
+// renderButtons();
