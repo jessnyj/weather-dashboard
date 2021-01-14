@@ -1,4 +1,4 @@
-h1 {
+#title {
     background-color:#383838;
     text-align: center;
     color: white;
@@ -18,7 +18,10 @@ h1 {
 }
 
 #cityName {
-    text-align: center;
+    font-size: 27px;
+    font-family: arial;
+    font-weight: bold;
+
 }
 
 #fiveday {
