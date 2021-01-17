@@ -24,11 +24,17 @@
 
 }
 
-#fiveday {
+/* #fiveday {
     color: white;
-}
+} */
 
 h2 {
     float: left;
+}
+
+.card {
+    height:175px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
