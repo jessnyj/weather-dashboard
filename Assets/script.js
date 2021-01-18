@@ -69,7 +69,7 @@ $(document).ready(function () {
                 $(".date0").text(dateCurrent);
                 $(".icon0").html("<img src=" + iconUrl + ">");
                 $(".temp0").html("Temp: " + response.daily[0].temp.day + " °F")
-
+                $(".humidity0").html("Humidity: " + response.daily[0].humidity + "%")
             }
          })
 
