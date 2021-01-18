@@ -14,9 +14,9 @@ $(document).ready(function () {
             // Transfer content to HTML
             $("#cityName").html("<h1>" + response.name + " " + "(" + moment().format('L') + ")" + " " + "<i class='fa fa-cloud' style='font-size:35px;color:grey'></i></h1>");
             var windSpeed = response.wind.speed;
-            $("#temp").text("Temperature (F) " + tempNew);
-            $("#humidity").text("Humidity: " + response.main.humidity);
-            $("#wind").text("Wind Speed: " + windSpeed);
+            $("#temp").text("Temperature: " + tempNew + " °F");
+            $("#humidity").text("Humidity: " + response.main.humidity + "%");
+            $("#wind").text("Wind Speed: " + windSpeed + " MPH");
 
             // Log the data in the console 
             console.log("Temperature (F): " + response.main.temp);
@@ -61,9 +61,15 @@ $(document).ready(function () {
             
             // for loop to display each day
             for (var i = 0; i < 5; i++) {
-                var dateCurrent = new Date((response.daily[i].dt)* 1000).toLocaleDateString();
+                var dateCurrent = moment(response.daily[i].dt_txt).format('L');
+                console.log(dateCurrent);
+                var iconUrl = "http://openweathermap.org/img/wn/" + iconObj + ".png";
+                var iconObj = response.daily[0].weather[0].icon;
+
                 $(".date0").text(dateCurrent);
-                $(".icon0").text(response.weather.icon)
+                $(".icon0").html("<img src=" + iconUrl + ">");
+                $(".temp0").html("Temp: " + response.daily[0].temp.day + " °F")
+
             }
          })
 
