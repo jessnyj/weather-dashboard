@@ -23,7 +23,6 @@ $(document).ready(function () {
 
         });
     }
-/* <i class='fa fa-cloud' style='font-size:35px;color:#E8E8E8'></i> */
 
     // UV Index
     function uvindex(longitude, latidute) {
@@ -33,6 +32,7 @@ $(document).ready(function () {
             url: queryURL2,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
 
             $("#uvindex").text("UV Index: " + response.value);
 
@@ -79,6 +79,12 @@ $(document).ready(function () {
         })
 
     }
+
+    // Save to Local Storage
+    
+
+
+
 
 
 
