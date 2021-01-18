@@ -32,9 +32,10 @@ h2 {
     float: left;
 }
 
-.card {
+#forecastCard {
     height:175px;
     margin-left: 10px;
     margin-right: 10px;
 }
+
 
