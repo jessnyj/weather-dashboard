@@ -51,11 +51,12 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-
+            console.log(response.daily[0].dt);
             // for loop to display each day
             for (var i = 0; i < 5; i++) {
-                var dateCurrent = moment(response.daily[i].dt_txt).format('L');
+                var dateCurrent = moment(response.daily[i].dt).format('L');
                 console.log(dateCurrent);
+               
                 var iconUrl = "http://openweathermap.org/img/wn/" + iconObj + ".png";
                 var iconObj = response.daily[i].weather[0].icon;
 
@@ -81,7 +82,7 @@ $(document).ready(function () {
     }
 
     // Save to Local Storage
-    
+
 
 
 

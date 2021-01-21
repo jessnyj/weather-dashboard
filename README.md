@@ -4,7 +4,6 @@
 ![Site](./Assets/weather-dashboard.png)
 
 ## Technologies Used
-
 * HTML
 * CSS
 * Bootstrap
