@@ -60,15 +60,9 @@ $(document).ready(function () {
                 var iconObj = response.daily[i].weather[0].icon;
                 var iconUrl = "http://openweathermap.org/img/wn/" + iconObj + ".png";
 
-
-                // $(".date" + i).text(dateCurrent);
-                // $(".icon" + i).html("<img src=" + iconUrl + ">");
-                // $(".temp0").html("Temp: " + response.daily[i].temp.day + " °F");
-                // $(".humidity0").html("Humidity: " + response.daily[i].humidity + "%");
-
                 $("#forecast-append").append(`
-                <div class="row">
-                <div id="forecastCard" class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+                
+                <div id="forecastCard" class="card text-white bg-primary mb-3">
                         <div class="forecast"></div>
                         <div class="body-forecast">
                             <p class="date0">${dateCurrent}</p>
@@ -77,14 +71,12 @@ $(document).ready(function () {
                             <p class="humidity0">Humidity: ${response.daily[i].humidity} %</p>
                         </div>
                     </div>
-                </div>
+            
                 `)
             }
         })
 
     }
-
-
 
 
     // Search button

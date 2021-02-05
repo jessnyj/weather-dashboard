@@ -24,18 +24,19 @@
 
 }
 
-/* #fiveday {
-    color: white;
-} */
-
 h2 {
     float: left;
 }
 
 #forecastCard {
-    height:175px;
+    height:190px;
     margin-left: 10px;
     margin-right: 10px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .date0 {
