@@ -54,37 +54,35 @@ $(document).ready(function () {
             console.log(response.daily[0].dt);
             // for loop to display each day
             for (var i = 0; i < 5; i++) {
-                var dateCurrent = moment(response.daily[i].dt).format('L');
+                var dateCurrent = moment.unix(response.daily[i].dt).format('L');
                 console.log(dateCurrent);
-               
-                var iconUrl = "http://openweathermap.org/img/wn/" + iconObj + ".png";
+
                 var iconObj = response.daily[i].weather[0].icon;
+                var iconUrl = "http://openweathermap.org/img/wn/" + iconObj + ".png";
 
-                $(".date0").text(dateCurrent);
-                $(".icon0").html("<img src=" + iconUrl + ">");
-                $(".temp0").html("Temp: " + response.daily[i].temp.day + " °F");
-                $(".humidity0").html("Humidity: " + response.daily[i].humidity + "%");
 
-                // $("#forecast-append").append(`
-                // <div id="forecastCard" class="card text-white bg-primary mb-3" style="max-width: 10rem;">
-                //         <div class="forecast"></div>
-                //         <div class="body-forecast">
-                //             <p class="date0"></p>
-                //             <p class="icon0"></p>
-                //             <p class="temp0"></p>
-                //             <p class="humidity0">${response.daily[i].humidity}</p>
-                //         </div>
-                //     </div>
-                // `)
+                // $(".date" + i).text(dateCurrent);
+                // $(".icon" + i).html("<img src=" + iconUrl + ">");
+                // $(".temp0").html("Temp: " + response.daily[i].temp.day + " °F");
+                // $(".humidity0").html("Humidity: " + response.daily[i].humidity + "%");
+
+                $("#forecast-append").append(`
+                <div class="row">
+                <div id="forecastCard" class="card text-white bg-primary mb-3" style="max-width: 10rem;">
+                        <div class="forecast"></div>
+                        <div class="body-forecast">
+                            <p class="date0">${dateCurrent}</p>
+                            <p class="icon0"><img src=" ${iconUrl}" ></p>
+                            <p class="temp0">Temp: ${response.daily[i].temp.day} °F</p>
+                            <p class="humidity0">Humidity: ${response.daily[i].humidity} %</p>
+                        </div>
+                    </div>
+                </div>
+                `)
             }
         })
 
     }
-
-    // Save to Local Storage
-
-
-
 
 
 
