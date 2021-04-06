@@ -30,17 +30,30 @@ weather data for cities. When you search for a city within the search bar, curre
 For this application, I incorporated third party APIs in order to retrive weather information about cities and for the UV index. I developed search field, the 5day forecast, and the remainder of the website utilizing CSS, Bootstrap, and HTML.
 
  ## Code Snippet
+ * This code snippet demonstrates how the city search functionality works.
  ```
-    <div id="searchbar" class="col-3 bg-light">
-                <h2 id="searchCity">Search for a City:</h2>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="searchinput" type="search" aria-label="Search"
-                        class="user-search">
-                    <div class="text-append">
-                        <button id="searchBtn" type="button" class="btn btn-primary"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </div>
+var APIKey = "b2803d08257a2919cdac41bd8ceb3835"
+    function displayWeather(citySearch) {
+        $.ajax({
+            url: "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + APIKey,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+            var tempNew = Math.round(((response.main.temp) - 273.15) * 9 / 5 + 32)
+            var weatherObj = response.weather[0].icon;
+            var weatherUrl = "http://openweathermap.org/img/wn/" + weatherObj + ".png";
+
+            $("#cityName").html("<h1>" + response.name + " " + "(" + moment().format('L') + ") " + "<img src=" + weatherUrl + ">" + "</h1>");
+            var windSpeed = response.wind.speed;
+            $("#temp").text("Temperature: " + tempNew + " °F");
+            $("#humidity").text("Humidity: " + response.main.humidity + "%");
+            $("#wind").text("Wind Speed: " + windSpeed + " MPH");
+
+            uvindex(response.coord.lon, response.coord.lat);
+            forecast(response.coord.lon, response.coord.lat);
+        });
+    }
+
 ```
 
 ## Authors

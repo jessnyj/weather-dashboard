@@ -6,7 +6,6 @@ $(document).ready(function () {
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + APIKey,
             method: "GET"
         }).then(function (response) {
-            console.log(response)
             var tempNew = Math.round(((response.main.temp) - 273.15) * 9 / 5 + 32)
             var weatherObj = response.weather[0].icon;
             var weatherUrl = "http://openweathermap.org/img/wn/" + weatherObj + ".png";
@@ -29,7 +28,6 @@ $(document).ready(function () {
             url: queryURL2,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
             $("#uvindex").text("UV Index: " + response.value);
         })
     }
@@ -41,13 +39,9 @@ $(document).ready(function () {
             url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + latidute + "&lon=" + longitude + "&exclude=hourly,minutely,current&appid=" + APIKey2 + "&units=imperial",
             method: "GET"
         }).then(function (response) {
-            console.log(response);
-            console.log(response.daily[0].dt);
             // for loop to display each day
             for (var i = 0; i < 5; i++) {
                 var dateCurrent = moment.unix(response.daily[i].dt).format('L');
-                console.log(dateCurrent);
-
                 var iconObj = response.daily[i].weather[0].icon;
                 var iconUrl = "http://openweathermap.org/img/wn/" + iconObj + ".png";
 
