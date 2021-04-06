@@ -9,6 +9,9 @@
 |[Description](#description)|[Work Involved](#work-involved)|[Code Snippet](#code-snippet)
 |[License](#license)|[Authors](#authors)|[Acknowledgments](#acknowledgments)
 
+## Deployed Link
+[Deployed Link](https://jessnyj.github.io/weather-dashboard/)
+
 ## Site Gif
 ![Site](./images/weather-dash.gif)
 
@@ -22,9 +25,6 @@
 ## Description
 This application utilizes third-party APIs in order to retrieve
 weather data for cities. When you search for a city within the search bar, current and future weather conditions are displayed, as well as the city name, the date, icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index. The UV index is also color coordinated to indicate whether the conditions are favorable or unfavorable. A 5-day forecast is also displayed.
-
-## Deployed Link
-[Deployed Link](https://jessnyj.github.io/weather-dashboard/)
 
 ## Work Involved
 For this application, I incorporated third party APIs in order to retrive weather information about cities and for the UV index. I developed search field, the 5day forecast, and the remainder of the website utilizing CSS, Bootstrap, and HTML.
