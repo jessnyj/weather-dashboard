@@ -1,7 +1,6 @@
 $(document).ready(function () {
     // Today's Weather 
     var APIKey = "b2803d08257a2919cdac41bd8ceb3835"
-
     function displayWeather(citySearch) {
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + APIKey,
@@ -20,31 +19,23 @@ $(document).ready(function () {
 
             uvindex(response.coord.lon, response.coord.lat);
             forecast(response.coord.lon, response.coord.lat);
-
         });
     }
 
     // UV Index
     function uvindex(longitude, latidute) {
         var queryURL2 = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latidute + "&lon=" + longitude + "&appid=" + APIKey
-
         $.ajax({
             url: queryURL2,
             method: "GET"
         }).then(function (response) {
             console.log(response);
-
             $("#uvindex").text("UV Index: " + response.value);
-
         })
-
     }
-
 
     // 5day forecast
     var APIKey2 = "f0dce85278aa72524554b8d53e297782"
-
-
     function forecast(longitude, latidute) {
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + latidute + "&lon=" + longitude + "&exclude=hourly,minutely,current&appid=" + APIKey2 + "&units=imperial",
@@ -75,9 +66,7 @@ $(document).ready(function () {
                 `)
             }
         })
-
     }
-
 
     // Search button
     $("#searchBtn").on("click", function (event) {
@@ -85,12 +74,7 @@ $(document).ready(function () {
         var citySearch = $("#searchinput").val();
         displayWeather(citySearch);
         $("#searchinput").val("");
-
     });
-
-
-
-
 });
 
 

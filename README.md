@@ -30,7 +30,7 @@ weather data for cities. When you search for a city within the search bar, curre
 For this application, I incorporated third party APIs in order to retrive weather information about cities and for the UV index. I developed search field, the 5day forecast, and the remainder of the website utilizing CSS, Bootstrap, and HTML.
 
  ## Code Snippet
- ```html
+ ```
     <div id="searchbar" class="col-3 bg-light">
                 <h2 id="searchCity">Search for a City:</h2>
                 <div class="input-group mb-3">
@@ -41,12 +41,6 @@ For this application, I incorporated third party APIs in order to retrive weathe
                     </div>
                 </div>
             </div>
-```
-
-```html
-<html>
-
-</html>
 ```
 
 ## Authors
